@@ -29,7 +29,7 @@ jobs:
     steps:
       # Check out the current repository
       - name: Fetch Sources
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: release/latest
 
@@ -58,7 +58,7 @@ jobs:
 
       # Setup Gradle
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v6
+        uses: gradle/actions/setup-gradle@v6.2.0
 
       # Fetch the release body for changelog patching
       - name: Fetch Release Body
