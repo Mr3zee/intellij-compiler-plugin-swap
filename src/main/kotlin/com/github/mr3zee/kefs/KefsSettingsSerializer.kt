@@ -80,7 +80,7 @@ internal fun KefsSettings.StoredState.asState(): KefsSettings.State {
         KotlinArtifactsRepository(k, value, type)
     }
 
-    val repoByNames = mappedRepos.associateBy { it.name }
+    val repoByNames = (DefaultState.repositories + mappedRepos).associateBy { it.name }
 
     return KefsSettings.State(
         repositories = mappedRepos,

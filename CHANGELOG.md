@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- Custom plugin bundles linked only to bundled default repositories now preserve those repository links across settings persistence round trips.
+
 ## [0.3.12] - 2026-07-10
 
 ### Added

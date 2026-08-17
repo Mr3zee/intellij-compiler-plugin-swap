@@ -417,4 +417,36 @@ class KefsSettingsSerializerTest {
             assertTrue(restored.plugins.any { it.name == plugin.name })
         }
     }
+
+    @Test
+    fun `custom plugin linked only to default repository survives persisted round-trip`() {
+        val defaultRepo = DefaultState.repositories.first { it.name == "Maven Central" }
+        val customPlugin = KotlinPluginDescriptor(
+            name = "custom-plugin",
+            ids = listOf(MavenId("org.custom:artifact")),
+            versionMatching = KotlinPluginDescriptor.VersionMatching.EXACT,
+            enabled = true,
+            ignoreExceptions = false,
+            repositories = listOf(defaultRepo),
+            replacement = null,
+        )
+        val fullState = KefsSettings.State(
+            repositories = DefaultState.repositories,
+            plugins = DefaultState.plugins + customPlugin,
+        )
+
+        val stored = fullState.withoutDefaults().asStored()
+
+        assertFalse(stored.repositories.containsKey(defaultRepo.name))
+        assertEquals(defaultRepo.name, stored.pluginsRepos[customPlugin.name])
+
+        val restored = stored.asState().withDefaults()
+        val restoredPlugin = restored.plugins.first { it.name == customPlugin.name }
+
+        assertEquals(listOf(defaultRepo), restoredPlugin.repositories)
+
+        val storedAgain = restored.withoutDefaults().asStored()
+
+        assertEquals(defaultRepo.name, storedAgain.pluginsRepos[customPlugin.name])
+    }
 }
