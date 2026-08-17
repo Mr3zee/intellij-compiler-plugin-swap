@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+## [0.3.13] - 2026-08-17
+
 ### Fixed
 
 - Custom plugin bundles linked only to bundled default repositories now preserve those repository links across settings persistence round trips.
@@ -246,7 +248,8 @@
 - Initial scaffold created
   from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
-[Unreleased]: https://github.com/Mr3zee/Kotlin-External-FIR-Support/compare/0.3.12...HEAD
+[Unreleased]: https://github.com/Mr3zee/Kotlin-External-FIR-Support/compare/0.3.13...HEAD
+[0.3.13]: https://github.com/Mr3zee/Kotlin-External-FIR-Support/compare/0.3.12...0.3.13
 [0.3.12]: https://github.com/Mr3zee/Kotlin-External-FIR-Support/compare/0.3.11...0.3.12
 [0.3.11]: https://github.com/Mr3zee/Kotlin-External-FIR-Support/compare/0.3.10...0.3.11
 [0.3.10]: https://github.com/Mr3zee/Kotlin-External-FIR-Support/compare/0.3.9...0.3.10
