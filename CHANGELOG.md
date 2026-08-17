@@ -7,6 +7,7 @@
 ### Fixed
 
 - Custom plugin bundles linked only to bundled default repositories now preserve those repository links across settings persistence round trips.
+- IntelliJ 262 builds now target the current non-expired 262 EAP platform.
 
 ## [0.3.12] - 2026-07-10
 
