@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- Android Studio version 262.9437.185 support
+
 ## [0.3.13] - 2026-08-17
 
 ### Fixed
